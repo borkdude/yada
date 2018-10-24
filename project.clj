@@ -61,8 +61,9 @@
      [com.cognitect/transit-clj "0.8.297" :exclusions [com.fasterxml.jackson.core/jackson-core]]
      [org.webjars/webjars-locator "0.34" :exclusions [com.fasterxml.jackson.core/jackson-core]]
      ;; Required because of above exclusions
-     [com.fasterxml.jackson.core/jackson-core "2.9.0"]]
+     [com.fasterxml.jackson.core/jackson-core "2.9.0"]
 
+     [speculative "0.0.2-SNAPSHOT"]]
 
     :source-paths
     [

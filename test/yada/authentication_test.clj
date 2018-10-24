@@ -6,7 +6,10 @@
    [schema.core :as s]
    [schema.test :refer [deftest]]
    [yada.schema :as ys]
-   [yada.security :refer [authenticate verify]]))
+   [yada.security :refer [authenticate verify]]
+   [yada.test-util :refer [wrap-speculative]]))
+
+(use-fixtures :once wrap-speculative)
 
 ;; We create some fictitious schemes, just for testing
 

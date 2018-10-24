@@ -3,7 +3,9 @@
 (ns ^{:doc "Test utilities"}
  yada.test-util
   (:require
-   [byte-streams :as bs])
+   [byte-streams :as bs]
+   [speculative.core]
+   [clojure.spec.test.alpha :as stest])
   (:import [ch.qos.logback.classic Logger Level]
            [org.slf4j LoggerFactory]))
 
@@ -24,3 +26,9 @@
        (.setLevel root-logger# ~level)
        ~@body
        (finally (.setLevel root-logger# old-level#)))))
+
+(defn wrap-speculative
+  [f]
+  (stest/instrument)
+  (f)
+  #_(stest/unstrument))
